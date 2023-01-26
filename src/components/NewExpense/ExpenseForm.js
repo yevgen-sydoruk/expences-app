@@ -31,7 +31,12 @@ const ExpenseForm = (props) => {
         setEnteredDate("");
     };
 
-    return (
+    const [openedForm, setOpenedForm] = useState(true);
+    console.log(openedForm);
+
+    const cancelButtonHandler = (event) => {};
+
+    const formContent = (
         <form onSubmit={submitHandler}>
             <div className='new-expense__controls'>
                 <div className='new-expense__control'>
@@ -64,9 +69,21 @@ const ExpenseForm = (props) => {
                 </div>
             </div>
             <div className='new-expense__actions'>
+                <button type='button' onClick={cancelButtonHandler}>
+                    Cancel
+                </button>
+
                 <button type='submit'>Add Expense</button>
             </div>
         </form>
+    );
+    console.log(openedForm);
+    return openedForm ? (
+        <button type='button' onClick={setOpenedForm(false)}>
+            Add New Expense
+        </button>
+    ) : (
+        formContent
     );
 };
 
