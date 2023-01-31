@@ -1,7 +1,7 @@
 import React from "react";
 import "./ChartBar.css";
 
-const CharBar = (props) => {
+const ChartBar = (props) => {
     let barFillHeight = "0%";
 
     if (props.maxValue > 0) {
@@ -18,9 +18,9 @@ const CharBar = (props) => {
                     {}
                 </div>
             </div>
-            <div className='chart-bar__lable'>{props.lable}</div>
+            <div className='chart-bar__lable'>{props.label}</div>
         </div>
     );
 };
 
-export default CharBar;
+export default ChartBar;
